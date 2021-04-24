@@ -1,0 +1,58 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Sort;
+
+/**
+ *
+ * @author renan
+ */
+public class QuickSort {
+// CODAGEM
+int countVezes = 1;
+        int i;
+        void algoritmoQuickSort(int lista[], int inicio, int fim) {
+            int n = lista.length;
+
+            if (inicio < fim) {
+                int indicePivo = partition(lista, inicio, fim);
+                algoritmoQuickSort(lista, inicio, indicePivo - 1);
+                algoritmoQuickSort(lista, indicePivo + 1, fim);
+            }
+        }
+ // PARTE VISUAL       
+            void printQuickSort (int lista[]) {
+            // OUTPUT
+            int n = lista.length;
+            if (countVezes == 1) {System.out.print("QuickSort: A ordem dos números após o vetor Quick Sort é: "); countVezes++;}
+            System.out.print("[");
+                for (i = 0; i < n; i++) {
+            System.out.print(" " + lista[i] + " ");
+                }
+            System.out.println("];");
+            }
+
+
+        int partition(int lista[], int inicio, int fim) {
+            int pivo = lista[inicio];
+            int i = inicio + 1, f = fim;
+            while (i <= f) {
+                if (lista[i] <= pivo)
+                    i++;
+                else if (pivo < lista[f])
+                    f--;
+                else {
+                    int troca = lista[i];
+                    lista[i] = lista[f];
+                    lista[f] = troca;
+                    i++;
+                    f--;
+                }
+            }
+            lista[inicio] = lista[f];
+            lista[f] = pivo;
+            return f;
+        }
+    }
