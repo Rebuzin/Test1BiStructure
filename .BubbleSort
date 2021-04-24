@@ -1,0 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Sort;
+/**
+ *
+ * @author renan
+ */
+public class BubbleSort {
+    int j, m, aux;
+    int n = 5;
+
+// CODAGEM
+ public void algoritimoBubblesort(int lista[]){
+                for(j = 0; j<n; j++){
+        for(m= 0; m < n - 1; m++){
+            if(lista[m] > lista[m + 1]){
+                aux = lista[m];
+                lista[m] = lista[m+1];
+                lista[m+1] = aux;
+
+              } 
+            }
+          }
+// PARTE VISUAL
+        System.out.print("BubbleSort: ");
+         System.out.print("A ordem dos números após o vetor do Bubble Sort é: ");
+         System.out.print("[");
+         for (m=0; m < n; m++) {
+         System.out.print(" " + lista[m] + " ");
+ 
+         }
+         System.out.println("];");
+
+ }
+}
