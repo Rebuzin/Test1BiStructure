@@ -1,0 +1,51 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Sort;
+/**
+ *
+ * @author renan
+ */
+public class SelectionSort {
+
+    int i, m, IM, j;
+    int countVezes = 1;
+// CODAGEM
+    public void algoritmoSelectionSort(int lista[]) {
+        int n = lista.length;
+        for (i = 0; i < n - 1; i++) {
+// ANTES DA INICIAÇÃO DIZ-SE COMO MENOR O VALOR NO ÍNDICE ATUAL DO LOOP, O VALOR INSERIDO NO LOOP
+
+
+            m = lista[i];
+            IM = i;
+// COMPARAÇÃO COM OUTROS VALORES
+            for (j = i + 1; j < n; j++) {
+                if (lista[j] < m) {
+                    m = lista[j];
+                    IM = j;
+                }
+            }
+// TROCA DE VALORES
+// SE O VALORE COMPARADO FOR MENOR QUE O ATUAL
+            lista[IM] = lista[i]; //
+            lista[i] = m;
+        }
+        
+        if (countVezes == 1) {
+            System.out.print("SelectionSort: ");
+            System.out.print("A ordem dos números após o vetor do Selection Sort é: ");
+            countVezes++;
+        }
+// PARTE VISUAL
+            System.out.print("[");
+        for (i = 0; i < n; i++) {
+            System.out.print(" " + lista[i] + " ");
+        }
+        System.out.println("];");
+        
+        
+    }
+}
